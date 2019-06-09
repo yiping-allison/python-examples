@@ -17,7 +17,6 @@ def checkValid(bank: list) -> list:
             dataName = person.get("UserName") # database username
             dataPin = person.get("PIN") # database Pin
             if dataName == user and dataPin == pin:
-                # TODO: database entry matches user input
                 checkBal = person.get("CheckingBalance")
                 saveBal = person.get("SavingsBalance")
                 userInfo.extend([dataName, dataPin, int(checkBal), int(saveBal)])
@@ -82,7 +81,7 @@ def bankProcess(userInfo: list) -> None:
     while True:
         userChoice = input("Would you like to (d)eposit, (w)ithdraw, or (q)uit? ")
         if userChoice == 'q':
-        # user wants to quit
+            # user wants to quit
             printReceipt(curList)
             print('quitting')
             return
@@ -107,9 +106,9 @@ def main() -> None:
     ]
     user = checkValid(bank)
     if not user:
-      # list is empty
-      print("You exceeded the number of login re-tries.")
-      exit()
+        # list is empty -> user not found from database
+        print("You exceeded the number of login re-tries.")
+        exit()
     bankProcess(user)
 
 main() # Never remove this!! You need to call the main function to start

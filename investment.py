@@ -10,21 +10,22 @@ def findSimpleInterest(principal: int, numYears: int, rate: float) -> float:
 
 def findCompoundInterest(p: int, y: int, r: float) -> float:
     # computes compound interest given principal, time in years, and rate
-    interest = p * (1 + (r ** y)) - 1
+    # interest is compounded once annually
+    interest = p * ((1 + r) ** y)
     return interest
 
 def main() -> None:
-    principal = int(input("What is the principal?"))
-    numYears = int(input("What is the number of years?"))
-    rate = float(input("What is the rate?"))
-    type = input("What is the type of investment (simple or compound)?")
+    principal = int(input("What is the principal? "))
+    numYears = int(input("What is the number of years? "))
+    rate = float(input("What is the rate? (in decimal) "))
+    type = input("What is the type of investment (simple or compound)? ")
 
     if type == 'c':
         answer = findCompoundInterest(principal, numYears, rate)
-        print("Your interest: ", answer)
+        print("Compound interest: ", answer)
     elif type == 's':
         answer = findSimpleInterest(principal, numYears, rate)
-        print("Your interest: ", answer)
+        print("Simple interest: ", answer)
     else:
         print("Unknown command!")
 
