@@ -72,10 +72,13 @@ def makeWithdrawal(info: list) -> list:
                 print("You must withdraw within your account balance.")
 
 def printReceipt(userFinal: list) -> None:
-    # Prints final balance of user
-    print("Thank you for stopping by today!")
-    print("Your current checking account balance: ", userFinal[2])
-    print("Your current savings account balance: ", userFinal[3])
+    # Reports the final account balance in a text file
+    receipt = open("Receipt.txt", "w")
+    line = "Thank you for stopping by today! \n"
+    line += "Your current checking account balance: " + str(userFinal[2])
+    line += "\n Your current savings account balance: " + str(userFinal[3])
+    receipt.write(line)
+    receipt.close()
     return
 
 def bankProcess(userInfo: list) -> None:
