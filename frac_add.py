@@ -2,6 +2,7 @@
 # Author: Yiping (Allison)
 # December 2017
 
+
 def is_int(string_int: str) -> bool:
     """
     gets string from is_a_fraction and checks if inside para are ints
@@ -17,6 +18,7 @@ def is_int(string_int: str) -> bool:
         return True
     else:
         return False
+
 
 def is_a_fraction(fraction: str) -> bool:
     """
@@ -46,6 +48,7 @@ def is_a_fraction(fraction: str) -> bool:
                 or (is_int(numerator) and is_int(denominator)):  # if the numerator and denom is int
             return True
 
+
 def split_fraction(fraction: str) -> tuple:
     """
     gets validated fractions in string form
@@ -66,6 +69,7 @@ def split_fraction(fraction: str) -> tuple:
         fraction = int(fraction)
         return fraction, 1
 
+
 def get_gcd(num: int, denom: int) -> int:  # num as in numerator
     """
     gets the final numerator and denominator
@@ -83,6 +87,7 @@ def get_gcd(num: int, denom: int) -> int:  # num as in numerator
             smaller_num = remainder
         else:
             return smaller_num
+
 
 def add_fractions(num_1: int, num_2: int, denom_1: int, denom_2: int) -> tuple:
     """
@@ -112,6 +117,7 @@ def add_fractions(num_1: int, num_2: int, denom_1: int, denom_2: int) -> tuple:
         numerator /= gcd
         denominator /= gcd
         return numerator, denominator
+
 
 def main() -> None:
     """
@@ -149,4 +155,7 @@ def main() -> None:
     final_fract = str(final_num) + '/' + str(final_den)
     print(fract + ' + ' + fract_2 + ' = ' + final_fract)
 
-main()
+
+if __name__ == "__main__":
+    main()
+

@@ -2,9 +2,7 @@
 # This program will simulate a bank. You will be able to withdraw and deposit
 # money
 
-# All helper function definitions will go here bc Python is top-down
-# Function definitions need to be defined before getting called in main (or any other
-# function for that matter)!
+
 def checkValid(bank: list) -> list:
     # This function will return user info if user enters valid
     # username and password
@@ -25,6 +23,7 @@ def checkValid(bank: list) -> list:
         userCount += 1
     return userInfo
 
+
 def selectAcc() -> int:
     # return 1 for checking
     # return 2 for savings
@@ -36,6 +35,7 @@ def selectAcc() -> int:
             return 1
         else:
             print("Please enter s or c.")
+
 
 def makeDeposit(info: list) -> list:
     # allows user to make deposits in accounts
@@ -51,6 +51,7 @@ def makeDeposit(info: list) -> list:
             else:
                 info[3] += userChoice
                 return info
+
 
 def makeWithdrawal(info: list) -> list:
     # allows user to withdraw money from accounts
@@ -71,6 +72,7 @@ def makeWithdrawal(info: list) -> list:
             else:
                 print("You must withdraw within your account balance.")
 
+
 def printReceipt(userFinal: list) -> None:
     # Reports the final account balance in a text file
     receipt = open("Receipt.txt", "w")
@@ -80,6 +82,7 @@ def printReceipt(userFinal: list) -> None:
     receipt.write(line)
     receipt.close()
     return
+
 
 def bankProcess(userInfo: list) -> None:
     curList = userInfo
@@ -99,9 +102,8 @@ def bankProcess(userInfo: list) -> None:
         else:
             print("Enter a valid choice.")
 
+
 def main() -> None:
-    # The main function should hold all the main steps of how you implement
-    # what the bank can do!
     bank = [
     {'UserName':'Rich', 'PIN':'3867', 'CheckingBalance':'6598', 'SavingsBalance':'982374'},
     {'UserName':'Steve', 'PIN':'1234', 'CheckingBalance':'2354', 'SavingsBalance':'29837'},
@@ -116,5 +118,7 @@ def main() -> None:
     else:
         bankProcess(user)
 
-main() # Never remove this!! You need to call the main function to start
-       # your program!
+
+if __name__ == "__main__":
+    main()
+

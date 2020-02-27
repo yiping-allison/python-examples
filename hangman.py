@@ -2,6 +2,7 @@
 # Author: Yiping (Allison)
 # December 2017
 
+
 def get_secret_word() -> str:
     """
     Gets player 1's secret word
@@ -15,6 +16,7 @@ def get_secret_word() -> str:
                      ' ? or white space: ')
     return word
 
+
 def secret_word(word_funct) -> tuple:
     """
     turns secret word into question marks
@@ -25,6 +27,7 @@ def secret_word(word_funct) -> tuple:
     secret_length = len(word)  # get the secret word in form of ?
     secret = secret_length * '?'
     return word, secret
+
 
 def get_guess(guess_list: list) -> str:
     """
@@ -49,6 +52,7 @@ def get_guess(guess_list: list) -> str:
             guess = guess.strip()
     return guess
 
+
 def display_word_mod(guess_list: list, word: str) -> None:
     """
     prints modifications to ? revealing secret word
@@ -61,6 +65,7 @@ def display_word_mod(guess_list: list, word: str) -> None:
             print(character, end='')
         else:
             print('?', end='')
+
 
 def display_hangman(i: int) -> None:
     """
@@ -96,6 +101,7 @@ def display_hangman(i: int) -> None:
     elif i == 1:
         print('|')
 
+
 def is_game_over(word: str, guess_list: list) -> bool:
     """
     checks if the game is over by winning
@@ -109,6 +115,7 @@ def is_game_over(word: str, guess_list: list) -> bool:
             i += 1
     if i == len(word):
         return True
+
 
 def main() -> None:
     """
@@ -148,4 +155,7 @@ def main() -> None:
         display_hangman(i)
         i = 0
 
-main()
+
+if __name__ == "__main__":
+    main()
+
