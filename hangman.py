@@ -124,13 +124,13 @@ def main() -> None:
     """
     # collects secret word and returns as question marks
     secret = secret_word(get_secret_word())
-    print('\n' * 30)
+    print('\n' * 40)
 
     # keeps track of user guesses
     guess_list = []
     i = 0
     while i != 7:
-        word, secret_w = secret
+        word, _ = secret
         # displaying hangman
         display_hangman(i)
         # secret word display
