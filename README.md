@@ -16,6 +16,6 @@ This repo contains some of my old work in python and new example scripts.
 ## Example Scripts
 
 `investment.py` - Computes simple and compound interest \
-`bank.py` - Simulates a bank ATM (User can deposit or withdraw money from their checking or savings account)
-`reverse.py` - Fun little exercise to reverse and capitalize a given string
+`bank.py` - Simulates a bank ATM (User can deposit or withdraw money from their checking or savings account) \
+`reverse.py` - Fun little exercise to reverse and capitalize a given string \
 `oop-python` - Playing around with OOP features in Python
